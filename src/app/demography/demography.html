@@ -1,0 +1,30 @@
+<div class="container demography">
+  <main-navbar></main-navbar>
+
+  <div class="demography__search" ng-controller="SearchController as search">
+    <select
+      ng-model="search.searchParams.continent"
+      ng-options="continent for continent in search.continentSelectList">
+    </select>
+
+    <select
+      ng-model="search.searchParams.metric"
+      ng-options="metric for metric in search.metricSelectList">
+    </select>
+
+    <select
+      ng-model="search.searchParams.limit"
+      ng-options="resultLimit for resultLimit in search.resultLimitSelectList">
+    </select>
+  </div>
+
+
+  <section class="demography__results" ng-if="demography.searchParams.isSearchDone" ng-controller="ResultsController as result">
+    <div class="demography__chart">
+      <highchart config="result.chartConfig"></highchart>
+    </div>
+    <div class="demography__table">
+      <!--Table goes here-->
+    </div>
+  </section>
+</div>
