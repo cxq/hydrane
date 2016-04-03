@@ -23,7 +23,7 @@ exports.paths = {
  *  Mainly used to inject script tags in the index.html
  */
 exports.wiredep = {
-  exclude: [/jquery/, /\/bootstrap\.js$/, /\/bootstrap-sass\/.*\.js/, /\/bootstrap\.css/],
+  exclude: [/jquery/],
   directory: 'bower_components'
 };
 
